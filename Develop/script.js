@@ -1,33 +1,23 @@
-// Assignment code here
-
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+//function generating and printing password onto the window object.
 function writePassword() {
-  //var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-  // prompt for amount of characters requested between 8 and 128
-
-
+  
+  // function creating prompt for amount of characters required
   function passwordLength() {
-  numberPrompt = window.prompt(
+    passwordLength = window.prompt(
     "Please enter the amount of characters you would like in your password between 8 and 128.");
-    // make numberprompt an integer
-    numberPrompt = Math.floor(parseInt(numberPrompt));
-    if (numberPrompt < 8 || numberPrompt > 128 || isNaN(numberPrompt)) {
+    // passwordLength validation
+    passwordLength = Math.floor(parseInt(passwordLength));
+    if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
       window.alert("You did not pick a valid option. Please try again");
       passwordLength();
     } else {
       charSelect();
-    }
+      }
   };
   passwordLength();
-
 
 
   function charSelect() {
@@ -36,9 +26,8 @@ function writePassword() {
       upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
       lower: "abcdefghijklmnopqrstuvwxyz",
       num: "1234567890",
-      spec: " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~" + '"'
+      spec: " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~" + '"',
     }
-    // Empty character bank
     charBank = "";
     // prompts and statements adding chars to charBank
     upperConf =   confirm("Would you like for the password to contain UPPERCASE letters?");
@@ -59,15 +48,23 @@ function writePassword() {
     if (specConf) {
       charBank += chars.spec;
     }
+
+  // Build password with for loop
+  function generatePassword() {
+  password = "";
+  for (var i=0; i < passwordLength; i++) {
+  var randomNum = Math.floor(Math.random() * charBank.length);
+  password += charBank.substring(randomNum, randomNum + 1);
   }
 
-
-  console.log(numberPrompt);
-  //function characterSelector(); {
-    // object with variables for different character types
-  //}
-
+  // Write password to the #password input
+  passwordText = document.querySelector("#password");
+  passwordText.value = password;
 }
+ generatePassword();
+  }
+}
+
 
 
 // Add event listener to generate button
