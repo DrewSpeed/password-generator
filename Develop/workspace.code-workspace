@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../vandygit/class-activities"
+		},
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../vandygit/pull-request-demo"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "code-projects"
+	}
+}

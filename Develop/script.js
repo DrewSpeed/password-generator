@@ -16,7 +16,7 @@ function writePassword() {
     } else {
       charSelect();
       }
-  };
+  }
   passwordLength();
 
 
@@ -49,21 +49,21 @@ function writePassword() {
       charBank += chars.spec;
     }
 
-  // Build password with for loop
-  function generatePassword() {
-  password = "";
-  for (var i=0; i < passwordLength; i++) {
-  var randomNum = Math.floor(Math.random() * charBank.length);
-  password += charBank.substring(randomNum, randomNum + 1);
-  }
+    // Build password with for loop
+    function generatePassword() {
+      password = "";
+      for (var i=0; i < passwordLength; i++) {
+      var randomNum = Math.floor(Math.random() * charBank.length);
+      password += charBank.substring(randomNum, randomNum + 1);
+      }
 
-  // Write password to the #password input
-  passwordText = document.querySelector("#password");
-  passwordText.value = password;
-}
- generatePassword();
+      // Write password to the #password input
+      passwordText = document.querySelector("#password");
+      passwordText.value = password;
+    }
+    generatePassword();
   }
-}
+};
 
 
 
