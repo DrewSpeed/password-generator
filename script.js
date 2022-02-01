@@ -69,3 +69,19 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+   $.ajax({
+        url: 'https://api.getsongbpm.com/',
+        type: 'GET',
+        dataType: 'json',
+        headers: {
+            'X-API-KEY': '4b52f9441e5448b15c564ac30bda81a3',
+        },
+        contentType: 'application/json; charset=utf-8',
+        success: function (result) {
+           console.log(result);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+      });
