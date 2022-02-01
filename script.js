@@ -73,13 +73,13 @@ generateBtn.addEventListener("click", writePassword);
 fetch('https://api.getsongbpm.com/search', {
   method: 'GET',
   headers: {
-      'api_key': '4b52f9441e5448b15c564ac30bda81a3'
+      'X-API-KEY': '4b52f9441e5448b15c564ac30bda81a3'
   }
 }).then(response => response.text()).then(html => console.log(html))
 .catch(err => {console.error(err)});
 
 
-apiKey = "https://api.getsongbpm.com/search/?api_key=4b52f9441e5448b15c564ac30bda81a3&type=both&lookup=song:wonderwall&artist:oasis";
+apiKey = "https://api.getsongbpm.com/search/?api_key=4b52f9441e5448b15c564ac30bda81a3&type=both&lookup=song:wonderwall%20artist:oasis";
 //apiBpm = apiKey + "&type=both&lookup=song:" + titleParsed + "&artist:" + artistParsed;
 fetch(apiKey).then(function(result) {
    console.log(result);
